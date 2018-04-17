@@ -1,0 +1,50 @@
+{
+  "name": "mobileline",
+  "version": "1.0.0",
+  "description": "Tencent Qcloud mobileline command tool.",
+  "keywords": [
+    "qcloud",
+    "mobileline",
+    "storage",
+    "application"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "config": "cd test && node test.js config",
+    "upload": "cd test && node test.js hosting upload ./www"
+  },
+  "bin": {
+    "mobileline": "./bin/mobileline.js"
+  },
+  "homepage": "https://github.com/tencentyun/mobileline",
+  "bugs": "https://github.com/tencentyun/mobileline/issues",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tencentyun/mobileline.git"
+  },
+  "author": {
+    "name": "carsonxu"
+  },
+  "maintainers": [
+    {
+      "name": "carsonxu"
+    }
+  ],
+  "engines": {
+    "node": ">=0.9"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "configstore": "^3.1.2",
+    "cos-nodejs-sdk-v5": "^2.3.8",
+    "formstream": "^1.1.0",
+    "glob": "^7.1.1",
+    "inquirer": "^5.2.0",
+    "lodash": "^4.17.4",
+    "ora": "^0.4.0",
+    "prompt": "^1.0.0",
+    "promptly": "^3.0.3",
+    "request": "^2.79.0",
+    "watch": "^1.0.1"
+  }
+}

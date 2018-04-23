@@ -1,5 +1,5 @@
 {
-  "name": "mobileline",
+  "name": "tac-cli",
   "version": "1.0.0",
   "description": "Tencent Qcloud mobileline command tool.",
   "keywords": [
@@ -11,16 +11,16 @@
   "main": "index.js",
   "scripts": {
     "config": "cd test && node test.js config",
-    "upload": "cd test && node test.js hosting upload ./www"
+    "deploy": "cd test && node test.js deploy ./www"
   },
   "bin": {
-    "mobileline": "./bin/mobileline.js"
+    "tac": "./bin/tac.js"
   },
-  "homepage": "https://github.com/tencentyun/mobileline",
-  "bugs": "https://github.com/tencentyun/mobileline/issues",
+  "homepage": "https://github.com/carsonxu/tac-cli",
+  "bugs": "https://github.com/carsonxu/tac-cli/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tencentyun/mobileline.git"
+    "url": "https://github.com/carsonxu/tac-cli.git"
   },
   "author": {
     "name": "carsonxu"
@@ -37,14 +37,6 @@
   "dependencies": {
     "configstore": "^3.1.2",
     "cos-nodejs-sdk-v5": "^2.3.8",
-    "formstream": "^1.1.0",
-    "glob": "^7.1.1",
-    "inquirer": "^5.2.0",
-    "lodash": "^4.17.4",
-    "ora": "^0.4.0",
-    "prompt": "^1.0.0",
-    "promptly": "^3.0.3",
-    "request": "^2.79.0",
-    "watch": "^1.0.1"
+    "prompt": "^1.0.0"
   }
 }

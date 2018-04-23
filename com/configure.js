@@ -8,4 +8,5 @@ var defaultConfig = {
     projectRegion: '',
 };
 var conf = new Configstore('mobileline', defaultConfig);
+
 module.exports = conf;

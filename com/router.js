@@ -1,6 +1,9 @@
 var router = function (commands) {
     var runner = function (argv) {
         var cmd1 = argv[0];
+        if (typeof commands[cmd1] === 'string') {
+            cmd1 = commands[cmd1];
+        }
         if (!commands[cmd1]) {
             cmd1 = 'index';
         } else {

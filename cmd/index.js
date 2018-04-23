@@ -1,9 +1,12 @@
 var router = require('../com/router');
 
 var commands = {
-    'index': require('./index/index'),
-    'config': require('./config/index'),
-    'hosting': require('./hosting/index'),
+    '-v': '--version',
+    '--version': require('./index/version'),
+    'ls': require('./project/ls'),
+    'use': require('./project/use'),
+    'config': require('./config/config'),
+    'deploy': require('./hosting/deploy'),
 };
 
 module.exports = router(commands);

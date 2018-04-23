@@ -11,13 +11,10 @@ var cos = new COS({
 });
 var exec = function (argv, callback) {
     !callback && (callback = util.noop);
-    if (!argv[0]) {
-        console.log('lack of param dirPath');
-        callback(false);
-        return;
-    }
 
-    var dirPath = path.resolve(process.cwd(), argv[0]);
+    var dirPath = path.resolve(process.cwd(), argv[0] || '');
+    var Bucket = 'tac-' + conf.get('projectKey') + '-ho-' + conf.get('appId');
+    var Region = conf.get('projectRegion');
 
     console.log('uploading dir: ' + dirPath);
     var cb = function (isSuccess) {
@@ -29,8 +26,8 @@ var exec = function (argv, callback) {
         if (count) {
             list.forEach(function (item) {
                 var opt = {
-                    Bucket: 'tac-' + conf.get('projectId') + '-ho-' + conf.get('appId'),
-                    Region: conf.get('projectRegion'),
+                    Bucket: Bucket,
+                    Region: Region,
                     Key: path.relative(dirPath, item.path).replace(/\\/g, '/')
                 };
                 var _cb = function (err, data) {

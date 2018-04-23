@@ -1,4 +1,4 @@
-var configure = require('../../com/configure');
+var configure = require('../../com/configstore');
 var cloudApi = require('../../com/cloudapi');
 
 var exec = function () {

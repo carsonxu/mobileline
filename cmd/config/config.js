@@ -1,5 +1,5 @@
 var prompt = require('../../com/prompt');
-var conf = require('../../com/configure');
+var conf = require('../../com/configstore');
 
 var exec = function () {
     var schema = {
@@ -22,7 +22,9 @@ var exec = function () {
         result.secretId && conf.set('secretId', result.secretId);
         result.secretKey && conf.set('secretKey', result.secretKey);
         console.log('config updated:');
-        console.log(JSON.stringify(conf.get(), null, '    '));
+        var config = conf.get();
+        config.secretKey = config.secretKey.replace(/./g, '*');
+        console.log(JSON.stringify(config, null, '    '));
         // console.log('  secretId:' + conf.get('secretId'));
         // console.log('  secretKey:' + conf.get('secretKey'));
         prompt.stop();

@@ -1,7 +1,7 @@
 var COS = require('cos-nodejs-sdk-v5');
 var path = require('path');
 var util = require('../../com/util');
-var conf = require('../../com/configure');
+var conf = require('../../com/configstore');
 
 
 var cos = new COS({

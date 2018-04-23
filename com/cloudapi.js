@@ -1,6 +1,6 @@
 var request = require('request');
 var crypto = require('crypto');
-var configure = require('./configure');
+var configure = require('./configstore');
 
 var config = {
     CLOUD_API: 'https://111.230.161.197',

@@ -1,6 +1,6 @@
 {
   "name": "tac-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Tencent Qcloud mobileline command tool.",
   "keywords": [
     "tac",
@@ -11,6 +11,7 @@
   ],
   "main": "index.js",
   "scripts": {
+    "version": "cd test && node test.js -v",
     "config": "cd test && node test.js config",
     "deploy": "cd test && node test.js deploy ./www"
   },
@@ -36,9 +37,13 @@
   },
   "license": "MIT",
   "dependencies": {
+    "colors": "^1.2.1",
     "configstore": "^3.1.2",
     "cos-nodejs-sdk-v5": "^2.3.8",
-    "prompt": "^1.0.0",
-    "request": "^2.85.0"
+    "read": "^1.0.7",
+    "request": "^2.85.0",
+    "revalidator": "^0.3.1",
+    "utile": "^0.3.0",
+    "winston": "^2.4.2"
   }
 }

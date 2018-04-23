@@ -1,4 +1,3 @@
-// var prompt = require('prompt');
 var prompt = require('../../com/prompt');
 var conf = require('../../com/configure');
 

@@ -40,8 +40,6 @@ function sendRequest(data, callback) {
     data.Timestamp = Math.floor(Date.now() / 1000);
     data.Signature = getSign(method, data);
 
-    console.log(data);
-
     // 添加请求信息
     var reqOpt = {
         method: method,
@@ -68,7 +66,6 @@ var api = {
     },
     GetAppId: function (callback) {
         sendRequest({Action: 'GetAppId', Version: '2018-02-05'}, function (r) {
-            console.log(r);
             callback(null, r.Response && r.Response.AppId);
         });
     },

@@ -35,7 +35,7 @@ var exec = function (argv, callback) {
                     --count === 0 && cb(true);
                 };
                 if (item.isDir) {
-                    opt.Body = Buffer('');
+                    opt.Body = Buffer.from('');
                     opt.Key += '/';
                     cos.putObject(opt, _cb);
                 } else if (opt.size <= 1024 * 1024) {

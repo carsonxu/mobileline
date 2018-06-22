@@ -3,7 +3,7 @@ var crypto = require('crypto');
 var configure = require('./configstore');
 
 var config = {
-    CLOUD_API: 'https://111.230.161.197',
+    CLOUD_API: 'https://tac.tencentcloudapi.com',
     CLOUD_HOST: 'tac.tencentcloudapi.com',
     SecretId: configure.get('secretId'),
     SecretKey: configure.get('secretKey'),
@@ -49,7 +49,6 @@ function sendRequest(data, callback) {
             host: config.CLOUD_HOST
         },
         rejectUnauthorized: false,
-        proxy: 'http://dev-proxy.oa.com:8080',
     };
 
     // 发起请求

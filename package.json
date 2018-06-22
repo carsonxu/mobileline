@@ -1,6 +1,6 @@
 {
   "name": "tac-cli",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Tencent Qcloud mobileline command tool.",
   "keywords": [
     "tac",

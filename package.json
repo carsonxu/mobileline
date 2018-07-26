@@ -13,6 +13,8 @@
   "scripts": {
     "version": "cd test && node test.js -v",
     "config": "cd test && node test.js config",
+    "ls": "cd test && node test.js ls",
+    "use": "cd test && node test.js use",
     "deploy": "cd test && node test.js deploy ./www"
   },
   "bin": {
@@ -39,7 +41,7 @@
   "dependencies": {
     "colors": "^1.2.1",
     "configstore": "^3.1.2",
-    "cos-nodejs-sdk-v5": "^2.3.8",
+    "cos-nodejs-sdk-v5": "^2.4.7",
     "read": "^1.0.7",
     "request": "^2.85.0",
     "revalidator": "^0.3.1",

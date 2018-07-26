@@ -1,7 +1,8 @@
-var COS = require('cos-nodejs-sdk-v5');
-var path = require('path');
-var util = require('../../com/util');
 var conf = require('../../com/configstore');
+var COS = require('cos-nodejs-sdk-v5');
+var util = require('../../com/util');
+var path = require('path');
+var fs = require('fs');
 
 
 var cos = new COS({
@@ -28,7 +29,8 @@ var exec = function (argv, callback) {
                 var opt = {
                     Bucket: Bucket,
                     Region: Region,
-                    Key: path.relative(dirPath, item.path).replace(/\\/g, '/')
+                    Key: path.relative(dirPath, item.path).replace(/\\/g, '/'),
+                    ContentLength: item.size,
                 };
                 var _cb = function (err, data) {
                     console.log('[' + (err ? 'error' : 'ok') + '] ' + item.path);
@@ -38,8 +40,8 @@ var exec = function (argv, callback) {
                     opt.Body = Buffer.from('');
                     opt.Key += '/';
                     cos.putObject(opt, _cb);
-                } else if (opt.size <= 1024 * 1024) {
-                    opt.Body = fs.creareReadStream(item.path);
+                } else if (item.size <= 1024 * 1024) {
+                    opt.Body = fs.createReadStream(item.path);
                     cos.putObject(opt, _cb);
                 } else {
                     opt.FilePath = item.path;
